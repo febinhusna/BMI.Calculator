@@ -1,4 +1,3 @@
-/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -139,40 +138,15 @@ a.btn.disabled {
     height: 40px;
     font-size: 16px;
     line-height: 40px;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 40px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 40px;
   }
 }
 
 .gender .male.selected img,
 .gender .female.selected img {
   transform: scale(1.05);
-}
-
-.slider{
-  display: flex;
-  margin: 0 auto;
-  gap: 2px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.slider1{
-  width: 38px;
-  height: 7px;
-  flex-shrink: 0;
-  border-radius: 5px;
-background: #BD5330;
-}
-
-.slider2{
-  width: 21px;
-height: 7px;
-flex-shrink: 0;
-border-radius: 5px;
-background: #F59B6E;
 }
 
 
@@ -201,15 +175,13 @@ background: #F59B6E;
 
 .range {
   max-width: 600px;
-  width: 100%; /* make it responsive */
-  /* margin: 0 auto 30px auto; */
+  width: 100%;
   height: 140.897px;
   flex-shrink: 0;
   border-radius: 20px;
   border: 1px solid rgba(228, 119, 65, 0.75);
   padding: 20px 65px 0 45px;
   box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
-  /* margin-bottom: 30px; */
 }
 
 .sliderValue {
@@ -385,7 +357,7 @@ a.calc:hover, button.reset:hover {
   position: relative;
   width: 250px;
   height: 160px;
-  margin: 200px auto;
+  margin: 100px auto;
   display: flex;
   flex-direction: row;
 }
@@ -495,12 +467,16 @@ a.calc:hover, button.reset:hover {
   font-size: 36px;
   font-weight: 700;
   line-height: 32px;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+
+.button {
+  text-align: center;
 }
 
 @media (max-width: 768px) {
   .bmi-result-value {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 30px;
   }
 
@@ -510,7 +486,7 @@ a.calc:hover, button.reset:hover {
   }
 
   .bmi-category {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .bmi-description {
@@ -519,7 +495,7 @@ a.calc:hover, button.reset:hover {
   }
 
   .bmi-calculating-message {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 28px;
   }
   
