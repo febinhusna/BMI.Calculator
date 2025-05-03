@@ -60,27 +60,7 @@
   
       const [line1, line2] = suggestion.split('. ').map(s => s.trim());
   
-    //   messageBox.innerHTML = `
-    //     <p style="color: #773C3B; font-family: Poppins; font-size: 40px; font-weight: 700; line-height: 32px; margin-bottom: 20px;">
-    //       Your BMI is ${bmi}
-    //     </p>
-    //     <p style="color: #773C3B; font-family: Poppins; font-size: 20px; font-weight: 500; line-height: 32px;">
-    //       You have a 
-    //       <span style="color: #E47741; font-size: 32px; font-weight: 600;">
-    //         ${category}
-    //       </span>
-    //     </p>
-    //     <p style="color: #773C3B; font-family: Poppins; font-size: 20px; font-weight: 500; line-height: 32px;">
-    //       ${line1}.
-    //     </p>
-    //     <p style="color: #773C3B; font-family: Poppins; font-size: 20px; font-weight: 500; line-height: 32px;">
-    //       ${line2 || ""}
-    //     </p>
 
-    //     <div class="button" style="margin-top: 40px;">
-    //             <a href="bmi.html" class="btn">Calculate another</a>
-    //         </div>
-    //   `;
 
     messageBox.innerHTML = `
   <p class="bmi-result-value">
@@ -94,7 +74,7 @@
   <p class="bmi-description">${line2 || ""}</p>
 
   <div class="button" style="margin-top: 40px;">
-    <a href="bmi.html" class="btn">Calculate another</a>
+    <a href="index.html" class="btn">Calculate another</a>
   </div>
 `;
 
@@ -134,19 +114,6 @@
         category = "Obesity range.";
         suggestion = "Consult a healthcare provider. Get a personalized plan to improve your health.";
       }
-  
-
-    //   const calcMessage = document.createElement("p");
-    //   calcMessage.id = "calc-message";
-    //   calcMessage.textContent = "Calculating your BMI...";
-    //   calcMessage.style.color = "#773C3B";
-    //   calcMessage.style.textAlign = "center";
-    //   calcMessage.style.fontFamily = "Poppins";
-    //   calcMessage.style.fontSize = "36px";
-    //   calcMessage.style.fontWeight = "700";
-    //   calcMessage.style.lineHeight = "32px";
-    //   calcMessage.style.marginTop = "20px";
-    //   document.body.appendChild(calcMessage);
   
     const calcMessage = document.createElement("p");
 calcMessage.id = "calc-message";
