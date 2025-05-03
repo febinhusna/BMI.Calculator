@@ -62,16 +62,19 @@
   
 
 
-    messageBox.innerHTML = `
-  <p class="bmi-result-value">
-    Your BMI is ${bmi}
-  </p>
-  <p class="bmi-category-text">
-    You have a 
-    <span class="bmi-category">${category}</span>
-  </p>
-  <p class="bmi-description">${line1}.</p>
-  <p class="bmi-description">${line2 || ""}</p>
+   messageBox.innerHTML = `
+    <div>
+          <p class="bmi-result-value">
+        Your BMI is ${bmi}
+      </p>
+      <p class="bmi-category-text">
+        You have a 
+        <span class="bmi-category">${category}</span>
+      </p>
+      <p class="bmi-description">${line1}.</p>
+      <p class="bmi-description">${line2 || ""}</p>
+    </div>
+  
 
   <div class="button" style="margin-top: 40px;">
     <a href="index.html" class="btn">Calculate another</a>
