@@ -55,7 +55,7 @@ h4{
     height: auto;
     max-height: 200px;
     transition: transform 0.3s ease;
-    margin-top: 80px;
+    margin-top: 30px;
     :hover {
       transform: scale(1.05);
     }
@@ -310,11 +310,11 @@ a.calc:hover, button.reset:hover {
 
 @media (max-width: 768px) {
   main {
-    padding-top: 20px;
+    padding-top: 10px;
   }
 
   .tall {
-    margin-top: 30px;
+    margin-top: 15px;
     font-size: 1rem;
   }
   
@@ -323,7 +323,7 @@ a.calc:hover, button.reset:hover {
     margin-bottom: 2rem;
   }
   .range {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
   }
    
   .sliderValue span {
@@ -477,6 +477,10 @@ a.calc:hover, button.reset:hover {
 
 @media (max-width: 768px) {
 
+  .speedometer {
+    margin: 50px auto;
+  }
+
   .spaced-button {
     margin-top: 0px;
   }
@@ -492,7 +496,7 @@ a.calc:hover, button.reset:hover {
   }
 
   .bmi-category {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .bmi-description {
@@ -504,5 +508,7 @@ a.calc:hover, button.reset:hover {
     font-size: 22px;
     line-height: 28px;
   }
+
+
   
 }
