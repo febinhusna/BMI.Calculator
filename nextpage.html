@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <main>
+    <a href="bmi.html"><i class="fa-solid fa-arrow-left"></i></a>
+    <h3 class="tall">How tall you are?</h3>
+    <h6 class="measure">in CM</h6>
+    <div class="range height-range">
+      <div class="sliderValue height-value">
+        <span>100</span>
+      </div>
+      <div class="field">
+        <div class="value left">0</div>
+        <input type="range" min="10" max="250" value="100" steps="1" id="heightSlider" />
+        <div class="value right">250</div>
+      </div>
+    </div>
+
+    <h3 class="tall">What is your weight?</h3>
+    <h6 class="measure">in Kg</h6>
+    <div class="range weight-range">
+      <div class="sliderValue weight-value">
+        <span>50</span>
+      </div>
+      <div class="field">
+        <div class="value left">0</div>
+        <input type="range" min="10" max="200" value="50" steps="1" id="weightSlider" />
+        <div class="value right">200</div>
+      </div>
+    </div>
+
+    <div class="buttons">
+        <button class="reset">Reset</button>
+        <a href="result.html" class="calc" onclick="saveInputs()">Calculate</a>
+    </div>
+  </main>
+
+   <script>
+    function setupSlider(sliderId, valueContainerSelector, min, max, leftCalcDivider) {
+      const slider = document.getElementById(sliderId);
+      const sliderValueContainer = document.querySelector(valueContainerSelector);
+      const valueDisplay = sliderValueContainer.querySelector("span");
+  
+      const defaultValue = +slider.getAttribute("value"); // Capture default
+  
+      const updateSlider = () => {
+        const value = +slider.value;
+        const percent = ((value - min) / (max - min)) * 100;
+  
+        valueDisplay.textContent = value;
+        valueDisplay.style.left = `${value / leftCalcDivider}%`;
+        valueDisplay.classList.add("show");
+  
+        slider.style.background = `linear-gradient(to right, #783B3A ${percent}%, #e47741 ${percent}%)`;
+      };
+  
+      slider.addEventListener("input", updateSlider);
+      slider.addEventListener("blur", () => valueDisplay.classList.remove("show"));
+  
+      updateSlider();
+  
+      return {
+        reset: () => {
+          slider.value = defaultValue;
+          updateSlider();
+        }
+      };
+    }
+  
+    const heightSlider = setupSlider("heightSlider", ".height-value", 10, 250, 2.5); 
+    const weightSlider = setupSlider("weightSlider", ".weight-value", 10, 200, 2.0); 
+  
+    document.querySelector(".reset").addEventListener("click", () => {
+      heightSlider.reset();
+      weightSlider.reset();
+    });
+  </script>
+  <script>
+    function saveInputs() {
+      const height = document.getElementById("heightSlider").value;
+      const weight = document.getElementById("weightSlider").value;
+      localStorage.setItem("height", height);
+      localStorage.setItem("weight", weight);
+    }
+  </script>
+  
+  </body>
+</html>

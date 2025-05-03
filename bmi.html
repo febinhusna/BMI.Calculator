@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>BMI Calculator</h3>
+            <h4>What is your gender?</h4>
+                <div class="gender">
+                    <div class="male" onclick="selectGender('male')">
+                      <img src="Male.png" alt="Male">
+                      <p>Male</p>
+                    </div>
+                    <div class="female" onclick="selectGender('female')">
+                      <img src="Female.png" alt="Female">
+                      <p>Female</p>
+                    </div>
+                </div>
+            <div class="button">
+                <a href="nextpage.html" class="btn disabled">Next</a>
+            </div>
+    </main>
+</body>
+<script>
+    function selectGender(gender) {
+      localStorage.setItem("gender", gender);
+      document.querySelector('.btn').classList.remove('disabled');
+    }
+
+    const male = document.querySelector('.male');
+  const female = document.querySelector('.female');
+  const buttonLink = document.querySelector('.btn');
+
+  function handleSelection(gender) {
+    if (gender === 'male') {
+      male.classList.add('selected');
+      female.classList.remove('selected');
+    } else {
+      female.classList.add('selected');
+      male.classList.remove('selected');
+    }
+
+    // Enable the button-like link
+    buttonLink.classList.remove('disabled');
+  }
+
+  male.addEventListener('click', () => handleSelection('male'));
+  female.addEventListener('click', () => handleSelection('female'));
+  </script>
+
+</html>

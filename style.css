@@ -1,0 +1,526 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  min-height: 100%;
+  background-color: #FEEFE1;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #783B3A;
+}
+
+h4{
+  color: #783B3A;
+  font-size: 1.2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 2rem;
+}
+/* Responsive heading */
+@media (max-width: 768px) {
+  main {
+    padding-top: 100px;
+  }
+  h2 {
+    text-align: left;
+    font-size: 2rem;
+  }
+  h4 {
+    text-align: left;
+    font-size: 0.8rem;
+  }
+  .gender img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    max-height: 200px;
+    transition: transform 0.3s ease;
+    margin-top: 80px;
+    :hover {
+      transform: scale(1.05);
+    }
+    cursor: pointer;
+  }
+}
+
+.gender {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.gender .male, 
+.gender .female {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gender img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  max-height: 550px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  :hover {
+    transform: scale(1.05);
+  }
+}
+
+.gender img:hover {
+  transform: scale(1.05);
+}
+
+.gender p{
+  color: #BF5432;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+a.btn {
+  display: block;
+  width: 450px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 15px;
+  background: #BF5432;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+a.btn:hover {
+  box-shadow: 0 4px 15px rgba(191, 84, 50, 0.8);
+}
+
+a.btn.disabled {
+  background-color: #ccc;
+  pointer-events: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+@media (max-width: 768px) {
+  a.btn {
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 40px;
+  }
+}
+
+.gender .male.selected img,
+.gender .female.selected img {
+  transform: scale(1.05);
+}
+
+.slider{
+  display: flex;
+  margin: 0 auto;
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.slider1{
+  width: 38px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 5px;
+background: #BD5330;
+}
+
+.slider2{
+  width: 21px;
+height: 7px;
+flex-shrink: 0;
+border-radius: 5px;
+background: #F59B6E;
+}
+
+
+/* next page */
+.fa-solid{
+  color: #783B3A;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+.tall {
+  margin-top: 60px;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  color: #783B3A;
+}
+
+.measure {
+  font-size: 12px;
+  margin-bottom: 2rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  color: #783B3A;
+  font-weight: lighter;
+}
+
+.range {
+  max-width: 600px;
+  width: 100%; /* make it responsive */
+  /* margin: 0 auto 30px auto; */
+  height: 140.897px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid rgba(228, 119, 65, 0.75);
+  padding: 20px 65px 0 45px;
+  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+  /* margin-bottom: 30px; */
+}
+
+.sliderValue {
+  position: relative;
+  width: 100%;
+}
+
+.sliderValue span {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  transform: translateX(-75%) scale(0);
+  font-weight: 500;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 55px;
+  z-index: 2;
+  color: #FEEFE1;
+  transform-origin: bottom;
+}
+
+.sliderValue span.show {
+  transform: translateX(-75%) scale(1);
+}
+
+.sliderValue span::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: #783B3A;
+  z-index: -1;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+.field .value {
+  position: absolute;
+  font-size: 18px;
+  color: #783B3A;
+  font-weight: 600;
+}
+
+.field .value.left {
+  left: -22px;
+}
+
+.field .value.right {
+  right: -45px;
+}
+
+.range input {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 12px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  background: #e47741;
+}
+
+.range input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #783B3A;
+  border: 1px solid #783B3A;
+  cursor: pointer;
+}
+
+.range input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #783B3A;
+  border: 1px solid #783B3A;
+  cursor: pointer;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+  width: 100%;
+  max-width: 600px;
+}
+
+a.calc, button.reset{
+  display: block;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 15px;
+  background: #BF5432;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  border: none;
+}
+
+a.calc:hover, button.reset:hover {
+  box-shadow: 0 4px 15px rgba(191, 84, 50, 0.8);
+}
+
+
+@media (max-width: 768px) {
+  main {
+    padding-top: 20px;
+  }
+
+  .tall {
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+  
+  .measure {
+    font-size: 12px;
+    margin-bottom: 2rem;
+  }
+  .range {
+    margin-bottom: 60px;
+  }
+   
+  .sliderValue span {
+    height: 40px;
+    width: 40px;
+    transform: translateX(-65%) scale(0); 
+  }
+  
+  .sliderValue span.show {
+    transform: translateX(-65%) scale(1);
+  }
+  
+  a.calc, button.reset{
+    width: 200px;
+  }
+
+.buttons{
+  gap: 20px;
+}
+}
+
+/* Calculation */
+
+.arc {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.speedometer {
+  position: relative;
+  width: 250px;
+  height: 160px;
+  margin: 200px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.segment {
+  position: absolute;
+}
+
+
+.seg1 {
+  top: 37px;
+  left: 0px;
+  transform: translate(0, 0);
+}
+
+.seg2 {
+  top: 0px;
+  left: 42px;
+  transform: translate(-10px, 0px);
+}
+
+.seg3 {
+  top: 0px;
+  left: 137px;
+  transform: translate(-20px, 0px);
+}
+
+.seg4 {
+  top: 37px;
+  left: 204px;
+  transform: translate(-30px, 0);
+}
+
+
+.needle-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 120px;
+  width: 0;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: bottom center;
+  z-index: 10;
+}
+
+.needle-line {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 100px;
+  background-color: #3A4154;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.needle-base {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: #3A4154;
+  border-radius: 50%;
+}
+
+.bmi-result-value {
+  color: #773C3B;
+  font-family: Poppins, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.bmi-category-text {
+  color: #773C3B;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+}
+
+.bmi-category {
+  color: #E47741;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bmi-description {
+  color: #773C3B;
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+}
+
+.bmi-calculating-message {
+  color: #773C3B;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .bmi-result-value {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .bmi-category-text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .bmi-category {
+    font-size: 24px;
+  }
+
+  .bmi-description {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .bmi-calculating-message {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  
+}
