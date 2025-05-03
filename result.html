@@ -46,44 +46,37 @@
       return (weight / (heightInMeters * heightInMeters)).toFixed(1);
     }
   
-    function showResult(bmi, category, suggestion) {
-      // Remove calculating message
-      const calcMessage = document.getElementById("calc-message");
-      if (calcMessage) {
-        calcMessage.remove();
-      }
-  
-      const messageBox = document.createElement("div");
-      messageBox.style.marginTop = "10px";
-      messageBox.style.padding = "0 20px";
-      messageBox.style.textAlign = "center";
-  
-      const [line1, line2] = suggestion.split('. ').map(s => s.trim());
-  
 
+function showResult(bmi, category, suggestion) {
+  const calcMessage = document.getElementById("calc-message");
+  if (calcMessage) calcMessage.remove();
 
-   messageBox.innerHTML = `
-    <div>
-          <p class="bmi-result-value">
-        Your BMI is ${bmi}
-      </p>
+  const messageBox = document.createElement("div");
+  messageBox.style.marginTop = "10px";
+  messageBox.style.display = "flex";
+  messageBox.style.flexDirection = "column";
+  messageBox.style.alignItems = "center";
+  messageBox.style.justifyContent = "center";
+
+  const [line1, line2] = suggestion.split('. ').map(s => s.trim());
+
+  messageBox.innerHTML = `
+    <div style="text-align: center;">
+      <p class="bmi-result-value">Your BMI is ${bmi}</p>
       <p class="bmi-category-text">
-        You have a 
-        <span class="bmi-category">${category}</span>
+        You have a <span class="bmi-category">${category}</span>
       </p>
       <p class="bmi-description">${line1}.</p>
       <p class="bmi-description">${line2 || ""}</p>
     </div>
-  
+    <div class="button spaced-button">
+      <a href="index.html" class="btn">Calculate another</a>
+    </div>
+  `;
 
-  <div class="button" style="margin-top: 40px;">
-    <a href="index.html" class="btn">Calculate another</a>
-  </div>
-`;
+  document.body.appendChild(messageBox);
+}
 
-  
-      document.body.appendChild(messageBox);
-    }
   
     function updateResult() {
       const gender = localStorage.getItem("gender");
@@ -117,6 +110,8 @@
         category = "Obesity range.";
         suggestion = "Consult a healthcare provider. Get a personalized plan to improve your health.";
       }
+  
+
   
     const calcMessage = document.createElement("p");
 calcMessage.id = "calc-message";
